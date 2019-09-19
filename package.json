@@ -1,0 +1,11 @@
+{
+  "name": "tab-out-catcher",
+  "version": "1.0.0",
+  "description": "This is a simple lib to wrap a container (such as form) and prevent jumping out from it by pressing Tab-button",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Konstantin Podmasko",
+  "license": "ISC"
+}

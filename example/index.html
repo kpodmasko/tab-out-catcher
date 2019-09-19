@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tabs catcher</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      form {
+        width: 50%;
+        display: block;
+        float: left;
+        height: 80vh;
+      }
+      .wrapped-with-toc {
+        background: rgba(35, 203, 167, 0.5);
+      }
+      .unwrapped-with-toc {
+        background: rgba(207, 0, 15, 0.5);
+      }
+    </style>
+    <script src="../index.js"></script>
+  </head>
+  <body>
+    <form class="wrapped-with-toc">
+      <h1>Let`s make it jump out from this form by pressing Tab-button</h1>
+      <p>
+        <input />
+      </p>
+      <p>
+        <input />
+      </p>
+      <p>
+        <input />
+      </p>
+    </form>
+    <form class="unwrapped-with-toc">
+      <h1>You won`t get there by Tab-button!!!</h1>
+      <p>
+        <input />
+      </p>
+      <p>
+        <input />
+      </p>
+      <p>
+        <input />
+      </p>
+    </form>
+    <input />
+    <input />
+    <input />
+    <input />
+    <input />
+    <script>
+      const wrapped = document.querySelector(".wrapped-with-toc");
+
+      catchTheTab(wrapped);
+    </script>
+  </body>
+</html>
