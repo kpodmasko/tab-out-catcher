@@ -69,6 +69,10 @@
           document
             .getElementById("second")
             .setAttribute("style", "display: none;");
+          document
+            .getElementById("wrapped-with-toc-first")
+            .querySelector("input")
+            .focus();
         }
         if (currentForm === "second") {
           document
@@ -77,6 +81,10 @@
           document
             .getElementById("first")
             .setAttribute("style", "display: none;");
+          document
+            .getElementById("wrapped-with-toc-second")
+            .querySelector("input")
+            .focus();
         }
       }
     </script>
@@ -119,7 +127,7 @@
         <div class="modal-content">
           <form id="wrapped-with-toc-first">
             <h1>You can`t tab out from this form to inputs</h1>
-            <p><input autofocus /></p>
+            <p><input /></p>
             <p><input /></p>
             <p><input /></p>
             <p><button>Submit</button></p>
@@ -134,7 +142,7 @@
       <form class="wrapped-with-toc" id="wrapped-with-toc-second">
         <h1>Let`s make it jump out from this form by pressing Tab-button</h1>
         <p>
-          <input autofocus />
+          <input />
         </p>
         <p>
           <input />
