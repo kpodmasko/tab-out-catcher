@@ -31,57 +31,136 @@
         border: 1px solid #888;
         width: 80%;
       }
+
+      #second form {
+        width: 50%;
+        display: block;
+        float: left;
+        height: 80vh;
+      }
+      .wrapped-with-toc {
+        background: rgba(35, 203, 167, 0.5);
+      }
+      .unwrapped-with-toc {
+        background: rgba(207, 0, 15, 0.5);
+      }
     </style>
     <script src="../index.js"></script>
+    <script>
+      var currentForm = "first";
+
+      function pushFirst() {
+        currentForm = "first";
+
+        renderActive();
+      }
+
+      function pushSecond() {
+        currentForm = "second";
+
+        renderActive();
+      }
+
+      function renderActive() {
+        if (currentForm === "first") {
+          document
+            .getElementById("first")
+            .setAttribute("style", "display: block;");
+          document
+            .getElementById("second")
+            .setAttribute("style", "display: none;");
+        }
+        if (currentForm === "second") {
+          document
+            .getElementById("second")
+            .setAttribute("style", "display: block;");
+          document
+            .getElementById("first")
+            .setAttribute("style", "display: none;");
+        }
+      }
+    </script>
   </head>
   <body>
-    <h2>Modal Example</h2>
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto
-      soluta rerum veniam odit id porro unde placeat illo! Modi, fuga expedita
-      sed possimus itaque amet cupiditate recusandae? Earum, porro aliquam.
-      <input />
-    </p>
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto
-      soluta rerum veniam odit id porro unde placeat illo! Modi, fuga expedita
-      sed possimus itaque amet cupiditate recusandae? Earum, porro aliquam.
-      <input />
-    </p>
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto
-      soluta rerum veniam odit id porro unde placeat illo! Modi, fuga expedita
-      sed possimus itaque amet cupiditate recusandae? Earum, porro aliquam.
-      <input />
-    </p>
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto
-      soluta rerum veniam odit id porro unde placeat illo! Modi, fuga expedita
-      sed possimus itaque amet cupiditate recusandae? Earum, porro aliquam.
-      <input />
-    </p>
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto
-      soluta rerum veniam odit id porro unde placeat illo! Modi, fuga expedita
-      sed possimus itaque amet cupiditate recusandae? Earum, porro aliquam.
-      <input />
-    </p>
+    <div id="first">
+      <h2>Modal Example</h2>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto
+        soluta rerum veniam odit id porro unde placeat illo! Modi, fuga expedita
+        sed possimus itaque amet cupiditate recusandae? Earum, porro aliquam.
+        <input />
+      </p>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto
+        soluta rerum veniam odit id porro unde placeat illo! Modi, fuga expedita
+        sed possimus itaque amet cupiditate recusandae? Earum, porro aliquam.
+        <input />
+      </p>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto
+        soluta rerum veniam odit id porro unde placeat illo! Modi, fuga expedita
+        sed possimus itaque amet cupiditate recusandae? Earum, porro aliquam.
+        <input />
+      </p>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto
+        soluta rerum veniam odit id porro unde placeat illo! Modi, fuga expedita
+        sed possimus itaque amet cupiditate recusandae? Earum, porro aliquam.
+        <input />
+      </p>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto
+        soluta rerum veniam odit id porro unde placeat illo! Modi, fuga expedita
+        sed possimus itaque amet cupiditate recusandae? Earum, porro aliquam.
+        <input />
+      </p>
 
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <form id="wrapped-with-toc">
-          <h1>You can`t tab out from this form for inputs</h1>
-          <p><input autofocus /></p>
-          <p><input /></p>
-          <p><input /></p>
-          <p><button>Submit</button></p>
-        </form>
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <form id="wrapped-with-toc-first">
+            <h1>You can`t tab out from this form to inputs</h1>
+            <p><input autofocus /></p>
+            <p><input /></p>
+            <p><input /></p>
+            <p><button>Submit</button></p>
+            <button onclick="pushSecond(); return false;">
+              Second example
+            </button>
+          </form>
+        </div>
       </div>
     </div>
+    <div id="second">
+      <form class="wrapped-with-toc" id="wrapped-with-toc-second">
+        <h1>Let`s make it jump out from this form by pressing Tab-button</h1>
+        <p>
+          <input autofocus />
+        </p>
+        <p>
+          <input />
+        </p>
+        <p>
+          <input />
+        </p>
+        <button onclick="pushFirst(); return false;">First example</button>
+      </form>
+      <form class="unwrapped-with-toc">
+        <h1>You won`t get there by Tab-button!!!</h1>
+        <p>
+          <input />
+        </p>
+        <p>
+          <input />
+        </p>
+        <p>
+          <input />
+        </p>
+      </form>
+    </div>
     <script>
-      const wrapped = document.querySelector("#wrapped-with-toc");
-
-      catchTheTab(wrapped);
+      renderActive();
+      catchTheTab(document.querySelector("#wrapped-with-toc-first"));
+      catchTheTab(document.querySelector("#wrapped-with-toc-second"));
     </script>
   </body>
 </html>
