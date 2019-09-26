@@ -31,7 +31,8 @@
   function getGateInput(handleTabOut) {
     var input = document.createElement("input");
     // not visibiliy:hidden or display:none as need to focus on this element
-    var hiddingStyle = `opacity: 0;cursor: none;position: absolute;top: -999999px;left: -999999px;`;
+    var hiddingStyle =
+      "opacity: 0;cursor: none;position: absolute;top: -999999px;left: -999999px;";
 
     input.setAttribute("style", hiddingStyle);
     input.addEventListener("focus", handleTabOut);
@@ -62,7 +63,7 @@
     GATES.push(getGateInput(handleTabOut));
     GATES.push(getGateInput(handleTabOut));
 
-    window.addEventListener("keydown", event => {
+    window.addEventListener("keydown", function(event) {
       if (event.keyCode === 9) {
         if (isChild(document.activeElement, element)) {
           moveGates(false, GATES);
