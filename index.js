@@ -1,9 +1,7 @@
 (function(root, factory) {
   root.catchTheTab = factory(root.b);
 })(typeof self !== "undefined" ? self : this, function() {
-  var GATES = [];
-
-  function moveGates(open) {
+  function moveGates(open, GATES) {
     GATES[0].setAttribute("tabindex", open ? -1 : 0);
     GATES[1].setAttribute("tabindex", open ? -1 : 0);
   }
@@ -41,7 +39,7 @@
     return input;
   }
 
-  function getTabOutHandler(element) {
+  function getTabOutHandler(element, GATES) {
     return function(event) {
       var relatedTarget = event.relatedTarget || event.fromElement;
       var target = event.target;
@@ -58,8 +56,8 @@
     if (!document || !window) {
       throw new Error("You must execute it in browser!!!");
     }
-
-    var handleTabOut = getTabOutHandler(element);
+    var GATES = [];
+    var handleTabOut = getTabOutHandler(element, GATES);
 
     GATES.push(getGateInput(handleTabOut));
     GATES.push(getGateInput(handleTabOut));
@@ -67,9 +65,9 @@
     window.addEventListener("keydown", event => {
       if (event.keyCode === 9) {
         if (isChild(document.activeElement, element)) {
-          moveGates(false);
+          moveGates(false, GATES);
         } else {
-          moveGates(true);
+          moveGates(true, GATES);
         }
       }
     });
