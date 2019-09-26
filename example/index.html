@@ -10,53 +10,76 @@
         margin: 0;
         padding: 0;
       }
-      form {
-        width: 50%;
-        display: block;
-        float: left;
-        height: 80vh;
+
+      .modal {
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
       }
-      .wrapped-with-toc {
-        background: rgba(35, 203, 167, 0.5);
-      }
-      .unwrapped-with-toc {
-        background: rgba(207, 0, 15, 0.5);
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
       }
     </style>
     <script src="../index.js"></script>
   </head>
   <body>
-    <form class="wrapped-with-toc">
-      <h1>Let`s make it jump out from this form by pressing Tab-button</h1>
-      <p>
-        <input />
-      </p>
-      <p>
-        <input />
-      </p>
-      <p>
-        <input />
-      </p>
-    </form>
-    <form class="unwrapped-with-toc">
-      <h1>You won`t get there by Tab-button!!!</h1>
-      <p>
-        <input />
-      </p>
-      <p>
-        <input />
-      </p>
-      <p>
-        <input />
-      </p>
-    </form>
-    <input />
-    <input />
-    <input />
-    <input />
-    <input />
+    <h2>Modal Example</h2>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto
+      soluta rerum veniam odit id porro unde placeat illo! Modi, fuga expedita
+      sed possimus itaque amet cupiditate recusandae? Earum, porro aliquam.
+      <input />
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto
+      soluta rerum veniam odit id porro unde placeat illo! Modi, fuga expedita
+      sed possimus itaque amet cupiditate recusandae? Earum, porro aliquam.
+      <input />
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto
+      soluta rerum veniam odit id porro unde placeat illo! Modi, fuga expedita
+      sed possimus itaque amet cupiditate recusandae? Earum, porro aliquam.
+      <input />
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto
+      soluta rerum veniam odit id porro unde placeat illo! Modi, fuga expedita
+      sed possimus itaque amet cupiditate recusandae? Earum, porro aliquam.
+      <input />
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto
+      soluta rerum veniam odit id porro unde placeat illo! Modi, fuga expedita
+      sed possimus itaque amet cupiditate recusandae? Earum, porro aliquam.
+      <input />
+    </p>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <form id="wrapped-with-toc">
+          <h1>You can`t tab out from this form for inputs</h1>
+          <p><input autofocus /></p>
+          <p><input /></p>
+          <p><input /></p>
+          <p><button>Submit</button></p>
+        </form>
+      </div>
+    </div>
     <script>
-      const wrapped = document.querySelector(".wrapped-with-toc");
+      const wrapped = document.querySelector("#wrapped-with-toc");
 
       catchTheTab(wrapped);
     </script>
