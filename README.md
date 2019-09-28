@@ -33,4 +33,7 @@ This is a simple lib to wrap a container (such as form) and prevent jumping out 
 
 ## example
 
+try it first:
+https://codepen.io/xknowledgeless/project/full/XMJLvg
+if something went wrong:
 https://xknowledgeless.github.io/tab-out-catcher/
