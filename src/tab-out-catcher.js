@@ -32,7 +32,7 @@
     var input = document.createElement("input");
     // not visibiliy:hidden or display:none as need to focus on this element
     var hiddingStyle =
-      "opacity: 0;cursor: none;position: absolute;top: -999999px;left: -999999px;";
+      "opacity: 0;cursor: none;position: absolute;top: -10px;left: -10px;";
 
     input.setAttribute("style", hiddingStyle);
     input.addEventListener("focus", handleTabOut);
