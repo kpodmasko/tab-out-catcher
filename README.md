@@ -4,7 +4,7 @@ This is a simple lib to wrap a container (such as form) and prevent jumping out 
 
 ## get started
 
-1. import index.js from root directory (tag script)
+1. import tab-out-catcher.min.js from root directory (tag script)
 2. get the container of form to wrap
 3. execute catchTheTab function with selected form
 
@@ -13,7 +13,7 @@ This is a simple lib to wrap a container (such as form) and prevent jumping out 
   <head>
     ...
     <!-- 1 menu item -->
-    <script src="./index.js"></script>
+    <script src="./tab-out-catcher.min.js"></script>
   </head>
   <body>
     <form id="wrap-it">
