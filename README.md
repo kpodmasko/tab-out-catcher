@@ -31,6 +31,12 @@ This is a simple lib to wrap a container (such as form) and prevent jumping out 
 </html>
 ```
 
+## react
+
+tab-out-catcher with react: <br />
+npm https://www.npmjs.com/package/react-tab-out-catcher <br/>
+github https://github.com/kpodmasko/react-tab-out-catcher
+
 ## example
 
 ###### try it first:
