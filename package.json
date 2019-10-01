@@ -1,7 +1,7 @@
 {
   "name": "tab-out-catcher",
   "filename": "src/tab-out-catcher.min.js",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "Konstantin Podmasko",
   "description": "This is a simple lib to wrap a container (such as form) and prevent jumping out from it by pressing Tab-button",
   "keywords": [
